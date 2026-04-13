@@ -4,7 +4,7 @@ CampusConnect is a centralized student collaboration platform designed to help u
 
 ---
 
-## 🎯 Motivation
+##  Motivation
 
 In large university environments, students often struggle to form meaningful academic connections. Traditional methods like group chats, social media posts, or messaging apps are unstructured and lack visibility.
 
@@ -17,16 +17,16 @@ CampusConnect solves this by offering a unified and structured system for academ
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-- 🔍 Course-based group discovery  
-- ➕ Create and manage study groups  
-- 📅 Schedule, reschedule, and cancel study sessions  
-- 🌐 Support for virtual and in-person sessions  
-- 💬 Group chat with real-time updates  
-- 📁 File sharing within group chats  
-- ✅ Attendance tracking for sessions  
-- ⏰ Upcoming session reminders on dashboard  
+-  Course-based group discovery  
+-  Create and manage study groups  
+-  Schedule, reschedule, and cancel study sessions  
+-  Support for virtual and in-person sessions  
+-  Group chat with real-time updates  
+-  File sharing within group chats  
+-  Attendance tracking for sessions  
+-  Upcoming session reminders on dashboard  
 
 ---
 
@@ -97,41 +97,41 @@ Backend typically runs on:
 http://localhost:5000
 ```
 
-###Project Structure 
-CampusConnect/
-│
-├── frontend/        # React client
-├── backend/         # Node + Express server
-├── doc/             # Documentation
-└── README.md
 
-### Authentication
+---
 
-CampusConnect uses JWT (JSON Web Tokens) for secure authentication:
+##  Authentication
 
-Login returns a token
-Token stored in browser (localStorage)
-Protected routes require valid token
+CampusConnect uses **JWT (JSON Web Tokens)** for secure authentication:
 
-### 🔗 API Overview
-Users
-Register / Login
-Update profile
-Change username/password
+- Login returns a token  
+- Token is stored in the browser (localStorage)  
+- Protected routes require a valid token  
 
-Groups
-Create / Join / Leave groups
-Search groups with filters
+---
 
-Sessions
-Create study sessions
-Reschedule / cancel
-Mark attendance
+## 🔗 API Overview
 
-Chat
-Send messages
-View recent messages
-Delete own messages
-Files
-Upload and download files
-Share resources within groups
+###  Users
+- Register / Login  
+- Update profile  
+- Change username / password  
+
+###  Groups
+- Create / Join / Leave groups  
+- Search groups using filters  
+
+###  Sessions
+- Create study sessions  
+- Reschedule / cancel sessions  
+- Mark attendance  
+
+###  Chat
+- Send messages  
+- View recent messages  
+- Delete own messages  
+
+###  Files
+- Upload files  
+- Download files  
+- Share resources within groups  
