@@ -73,7 +73,7 @@ Fill in required values such as:
 
 ```
 MONGO_URI=your_database_connection_string
-PORT=2222
+PORT=5000
 JWT_SECRET=your_jwt_secret_key
 ```
 
