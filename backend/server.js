@@ -23,8 +23,11 @@ app.use(express.json()); //allows parsing of json data
 
 //Cross Origin Resource Sharing Policy
 app.use(cors({
-    origin: 'http://localhost:5173', //replace with your host port
-    methods: ['GET', 'POST', 'DELETE'],
+    origin: [
+        'http://localhost:5173', // Local development
+        'https://campus-connect-737k.vercel.app' // Vercel production
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true, 
 
 }));
@@ -44,4 +47,3 @@ app.listen(PORT, () => {
     connectDB();
     console.log("Server started at http://localhost:" + PORT);
 });
-
