@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+ 
+/* BASE */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+ 
+/* ============================================================
+   LOGIN PAGE
+   ============================================================ */
+ 
+.login-page {
+  height: 100vh;
+  background-image: url("/yorku.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+ 
+.login-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+ 
+.glass-card {
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 48px 38px;
+  width: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  animation: fadeIn 0.5s ease;
+}
+ 
+.logo-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+}
+ 
+.subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 30px;
+}
+ 
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+ 
+.form-section h2 {
+  font-size: 17px;
+  color: white;
+  margin: 0;
+}
+ 
+.glass-input,
+.primary-login-btn,
+.primary-signup-btn {
+  width: 100%;
+  height: 52px;
+  box-sizing: border-box;
+}
+ 
+.glass-input {
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+ 
+.glass-input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+ 
+.glass-input:focus {
+  border-color: #C8102E;
+  box-shadow: 0 0 8px rgba(200,16,46,0.4);
+}
+ 
+.primary-login-btn,
+.primary-signup-btn {
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #C8102E, #a00d24);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
+  transition: all 0.25s ease;
+}
+ 
+.primary-login-btn:hover:not(:disabled),
+.primary-signup-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200, 16, 46, 0.6),
+              0 0 15px rgba(200, 16, 46, 0.4),
+              0 0 40px rgba(200, 16, 46, 0.2);
+}
+
+.primary-login-btn,
+.primary-signup-btn {
+  border-radius: 12px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #C8102E, #a00d24);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4),
+              0 0 0px rgba(200, 16, 46, 0);
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer sweep on hover */
+.primary-login-btn::after,
+.primary-signup-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.4s ease;
+}
+
+.primary-login-btn:hover::after,
+.primary-signup-btn:hover::after {
+  left: 160%;
+}
+ 
+.primary-login-btn:active,
+.primary-signup-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(200, 16, 46, 0.5),
+              0 0 20px rgba(200, 16, 46, 0.3);
+}
+ 
+.primary-login-btn:disabled,
+.primary-signup-btn:disabled {
+  background: rgba(200, 16, 46, 0.3);
+  color: rgba(255,255,255,0.6);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+ 
+.form-separator {
+  position: relative;
+  margin: 25px 0;
+  text-align: center;
+}
+ 
+.form-separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+ 
+.or-text {
+  position: relative;
+  padding: 0 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(20, 20, 20, 0.55);
+  border-radius: 4px;
+}
+ 
+.feedback-msg {
+  font-size: 13px;
+  margin-top: 5px;
+}
+ 
+.feedback-msg.success { color: #00ffcc; }
+.feedback-msg.error   { color: #ff6b6b; }
+ 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+ 
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+ 
+.dashboard-page {
+  min-height: 100vh;
+  background-image: url("/yorku.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+ 
+.dash-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+ 
+/* TOPBAR */
+.dash-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+}
+ 
+.dash-passport-pill {
+  font-size: 12px;
+  background: rgba(200, 16, 46, 0.55);
+  border: 1px solid rgba(200, 16, 46, 0.9);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+ 
+/* THREE COLUMNS */
+.dash-columns {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px;
+  align-items: flex-start;
+  flex: 1;
+  overflow: auto;
+}
+ 
+.dash-col-left   { width: 270px; flex-shrink: 0; }
+.dash-col-center { flex: 1; min-width: 0; }
+.dash-col-right  { width: 220px; flex-shrink: 0; display: flex; flex-direction: column; gap: 10px; }
+ 
+/* PANEL — overrides glass-card width/padding for dashboard use */
+.dash-panel {
+  width: auto !important;
+  padding: 20px !important;
+  border-radius: 16px !important;
+  animation: none;
+  box-sizing: border-box;
+}
+ 
+.dash-panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: white;
+}
+ 
+/* FORM */
+.dash-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.dash-row2 {
+  display: flex;
+  gap: 8px;
+}
+ 
+/* Select arrow */
+.dash-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.4)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px !important;
+}
+ 
+.dash-select option {
+  background: #1a0a0e;
+  color: white;
+}
+ 
+/* SEARCH ROW */
+.dash-search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+ 
+.dash-search-row .glass-input,
+.dash-search-row select,
+.dash-search-row button {
+  height: 46px;
+}
+
+.dash-search-row button {
+  width: auto !important;
+  padding: 0 20px !important;
+  flex-shrink: 0;
+}
+ 
+/* TABLE */
+.dash-table-wrap { display: flex; flex-direction: column; }
+ 
+.dash-table-header {
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 4px;
+}
+ 
+.dash-th {
+  flex: 1;
+  padding-right: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 0;
+  text-align: center;
+}
+
+/* Column-specific widths — higher specificity to override dash-th/dash-td flex:1 */
+.dash-th.col-name,    .dash-td.col-name    { flex: 1.0 !important; }
+.dash-th.col-course,  .dash-td.col-course  { flex: 0.7 !important; }
+.dash-th.col-dept,    .dash-td.col-dept    { flex: 2.5 !important; overflow: visible !important; white-space: normal !important; }
+.dash-th.col-mode,    .dash-td.col-mode    { flex: 0.8 !important; }
+.dash-th.col-campus,  .dash-td.col-campus  { flex: 0.7 !important; }
+.dash-th.col-actions, .dash-td.col-actions { flex: 0 0 110px !important; }
+ 
+.dash-table-row {
+  display: flex;
+  align-items: center;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.15s ease;
+}
+ 
+.dash-table-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.01);
+}
+ 
+.dash-td { flex: 1; padding-right: 8px; min-width: 0; text-align: center; }
+ 
+.dash-muted {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+ 
+.dash-course-tag {
+  background: rgba(200, 16, 46, 0.15);
+  border: 1px solid rgba(200, 16, 46, 0.3);
+  color: #ff8fa3;
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+ 
+.dash-action-btns { display: flex; gap: 5px; justify-content: center; }
+ 
+.dash-btn-sm {
+  height: 28px !important;
+  width: auto !important;
+  padding: 0 12px !important;
+  font-size: 11px !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+}
+ 
+.dash-btn-ghost {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+ 
+.dash-btn-ghost:hover { background: rgba(255, 255, 255, 0.25); border-color: rgba(255,255,255,0.7); }
+ 
+/* EMPTY STATE */
+.dash-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px;
+  gap: 8px;
+  text-align: center;
+}
+ 
+.dash-empty-icon { font-size: 28px; color: rgba(255, 255, 255, 0.2); }
+.dash-empty-text { font-size: 12px; color: rgba(255, 255, 255, 0.3); max-width: 260px; margin: 0; }
+ 
+/* MY GROUPS LIST */
+.dash-group-list { display: flex; flex-direction: column; gap: 3px; }
+ 
+.dash-group-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+ 
+.dash-group-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+ 
+.dash-group-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+ 
+.dash-group-avatar.accent {
+  background: rgba(200, 16, 46, 0.2);
+  color: #ff8fa3;
+}
+ 
+.dash-group-info  { display: flex; flex-direction: column; }
+.dash-group-name  { font-size: 12px; font-weight: 600; color: white; }
+.dash-group-code  { font-size: 10px; color: rgba(255, 255, 255, 0.38); }
+ 
+.dash-footer-note {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+ 
+/* FINAL POLISH */
+ 
+.glass-card {
+  transition: all 0.25s ease;
+}
+ 
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+}
+ 
+.primary-login-btn:hover,
+.primary-signup-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(200, 16, 46, 0.6),
+              0 0 20px rgba(200, 16, 46, 0.35),
+              0 0 50px rgba(200, 16, 46, 0.15);
+}
+ 
+ 
+/* ============================================================
+   GROUP DETAIL
+   ============================================================ */
+ 
+.gd-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(200, 16, 46, 0.2);
+  border: 1px solid rgba(200, 16, 46, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff8fa3;
+  flex-shrink: 0;
+}
+ 
+.gd-avatar-more {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+}
+
+/* ============================================================
+   FIX: CENTER + SQUARE CALENDAR (FINAL POLISH)
+   ============================================================ */
+
+/* Center main content better */
+.dash-columns {
+  justify-content: center;
+}
+
+/* Limit width so UI doesn't stretch */
+.dash-col-center {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.dash-row2 {
+  display: flex;
+  gap: 10px;
+}
+
+.dash-row2 .glass-input {
+  flex: 1; 
+  min-width: 0;
+}
+
+/* =========================
+   CALENDAR FIX (MAIN PART)
+   ========================= */
+
+/* Wrapper to center calendar */
+.dash-empty-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Square calendar box */
+.dash-empty {
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0; /* override previous padding */
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+
+  text-align: center;
+}
+
+/* Icon polish */
+.dash-empty-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Main text */
+.dash-empty-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+/* Subtext */
+.dash-empty-sub {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+
+/* ============================================================
+   #2 SKELETON SHIMMER
+   ============================================================ */
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton-row {
+  display: flex;
+  align-items: center;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  gap: 8px;
+}
+
+.skeleton-cell {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.1) 40%,
+    rgba(255,255,255,0.04) 80%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  flex: 1;
+}
+
+.skeleton-cell.short  { max-width: 70px; }
+.skeleton-cell.medium { max-width: 120px; }
+.skeleton-cell.long   { max-width: 200px; }
+.skeleton-cell.btn    { max-width: 80px; height: 26px; border-radius: 7px; }
+
+
+/* ============================================================
+   #3 ANIMATED BORDER GLOW ON GLASS CARDS
+   ============================================================ */
+
+@keyframes borderSpin {
+  0%   { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.glass-card {
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 48px 38px;
+  width: 380px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  animation: fadeIn 0.5s ease;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.25s ease;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    rgba(200, 16, 46, 0.6) 80%,
+    rgba(255, 120, 140, 0.8) 90%,
+    rgba(200, 16, 46, 0.6) 95%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderSpin 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   #6 PRESENCE DOTS ON MY GROUPS
+   ============================================================ */
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.6); opacity: 0.5; }
+}
+
+.dash-group-item {
+  position: relative;
+}
+
+.dash-group-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00e5a0;
+  box-shadow: 0 0 6px rgba(0,229,160,0.7);
+  animation: pulse-dot 2.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* Give the item right padding so the dot never overlaps text */
+.dash-group-item {
+  padding-right: 24px !important;
+}
+
+
+
+/* ==============================
+   Reschedule Modal Overlay Styles
+   ============================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* semi-transparent dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* ensures it sits above all other content */
+}
+
+.modal-overlay .dash-panel {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
