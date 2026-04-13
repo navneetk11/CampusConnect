@@ -103,7 +103,7 @@ http://localhost:5000
 ### 🚀 Live Deployment
 
 Frontend (Vercel):
-https://campusconnect-737k.vercel.app  
+https://campus-connect-737k.vercel.app
 
 Backend (Render):
 https://campusconnect-8loz.onrender.com  
