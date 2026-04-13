@@ -51,7 +51,7 @@ function App() {
   // CREATE USER (SIGNUP)
   const createUser = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
+      const response = await fetch("https://campusconnect-8loz.onrender.com/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: name, password })
@@ -76,7 +76,7 @@ function App() {
   // LOGIN USER
   const loginUserFunc = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/users/login", {
+      const response = await fetch("https://campusconnect-8loz.onrender.com/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: loginUsername, password: loginPassword })
@@ -124,7 +124,7 @@ function App() {
   // GET USERS
   const getUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/users");
+      const response = await fetch("https://campusconnect-8loz.onrender.com/api/users");
       const data = await response.json();
       setUsernames(data.data || []);
     } catch (error) {
@@ -135,7 +135,7 @@ function App() {
   //GET current user's groups
   const getMyGroups = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${currentUser}`);
+      const res = await fetch(`https://campusconnect-8loz.onrender.com/api/users/${currentUser}`);
       const user = await res.json();
 
       let groups = user.data.groups;
@@ -151,7 +151,7 @@ function App() {
   //GET a given group's info
   const getGroupInfo = async (groupId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/groups/getGroup/${groupId}`);
+      const res = await fetch(`https://campusconnect-8loz.onrender.com/api/groups/getGroup/${groupId}`);
       if (res.ok) {
         const data = await res.json();
         return data;
@@ -170,7 +170,7 @@ function App() {
     const mode = params?.mode ?? searchMode;
     try {
       const response = await fetch(
-        `http://localhost:5000/api/groups/search?courseCode=${courseCode}&department=${department}&mode=${mode}`
+        `https://campusconnect-8loz.onrender.com/api/groups/search?courseCode=${courseCode}&department=${department}&mode=${mode}`
       );
       const data = await response.json();
       setSearchMessage("");
@@ -190,7 +190,7 @@ function App() {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/groups/${groupId}/join`, {
+      const response = await fetch(`https://campusconnect-8loz.onrender.com/api/groups/${groupId}/join`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -211,7 +211,7 @@ function App() {
   const createGroup = async (groupData) => {
     const payload = groupData || { title, courseCode, department, mode, location, members };
     try {
-      const response = await fetch('http://localhost:5000/api/groups/create', {
+      const response = await fetch('https://campusconnect-8loz.onrender.com/api/groups/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

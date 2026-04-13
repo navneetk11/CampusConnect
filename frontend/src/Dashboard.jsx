@@ -91,7 +91,7 @@ function Dashboard({
 
   const getNextSession = async () => {
     try{
-      const res = await fetch(`http://localhost:5000/api/sessions/${currentUser}/next`);
+      const res = await fetch(`https://campusconnect-8loz.onrender.com/api/sessions/${currentUser}/next`);
       const data = await res.json();
       if(data.success){
         setNextSession(data.data);

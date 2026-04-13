@@ -34,7 +34,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
  
   const fetchSessions = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/sessions/${group._id}`);
+      const res = await fetch(`https://campusconnect-8loz.onrender.com/api/sessions/${group._id}`);
       const data = await res.json();
       if (data.success) setSessions(data.data);
     } catch (error) {
@@ -44,7 +44,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
  
   const handleCreateSession = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/sessions/create", {
+      const res = await fetch("https://campusconnect-8loz.onrender.com/api/sessions/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -73,7 +73,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
 
   const joinSession = async (sessionId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}/join`, {
+      const response = await fetch(`https://campusconnect-8loz.onrender.com/api/sessions/${sessionId}/join`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: currentUser })
@@ -91,7 +91,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     try {
       const sId = sessionId?.toString() || sessionId;
       const uId = currentUser?.toString() || currentUser;
-      const response = await fetch(`http://localhost:5000/api/sessions/${sId}/leave`, {
+      const response = await fetch(`https://campusconnect-8loz.onrender.com/api/sessions/${sId}/leave`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: uId })
@@ -109,7 +109,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     try {
       const gId = group._id?.toString() || group._id;
       const uId = currentUser?.toString() || currentUser;
-      const response = await fetch(`http://localhost:5000/api/groups/${gId}/leave`, {
+      const response = await fetch(`https://campusconnect-8loz.onrender.com/api/groups/${gId}/leave`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: uId })
@@ -132,7 +132,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     const sId = sessionId?.toString() || sessionId;
     console.log("[cancelSession] sessionId:", sId);
 
-    const response = await fetch(`http://localhost:5000/api/sessions/${sId}`, {
+    const response = await fetch(`https://campusconnect-8loz.onrender.com/api/sessions/${sId}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
     });
@@ -156,7 +156,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     return;
   }
   try {
-    const response = await fetch(`http://localhost:5000/api/sessions/${rescheduleSessionId}/reschedule`, {
+    const response = await fetch(`https://campusconnect-8loz.onrender.com/api/sessions/${rescheduleSessionId}/reschedule`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ newDate: rescheduleDate, newTime: rescheduleTime })

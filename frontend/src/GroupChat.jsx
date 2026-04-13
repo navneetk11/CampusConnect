@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://campusconnect-8loz.onrender.com';
 
 export default function GroupChat({ groupId, token, username }) {
   const [messages, setMessages]   = useState([]);
