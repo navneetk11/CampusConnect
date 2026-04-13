@@ -151,7 +151,7 @@ function LanyardBadge({ username, year }) {
           <div className="ss-clip-body" />
           <div className="ss-clip-teeth" />
           <div className="ss-badge">
-            <div className="ss-badge-org">StudySphere</div>
+            <div className="ss-badge-org">CampusConnect</div>
             <div className="ss-badge-avatar-wrap">
               <div className="ss-badge-avatar">{initials}</div>
               <div className="ss-avatar-ring" />

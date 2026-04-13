@@ -21,7 +21,7 @@ function Login({
         <header className="card-header">
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "4px" }}>
             <TopbarGlobe size={38} />
-            <h1 className="logo-text" style={{ margin: 0 }}>StudySphere</h1>
+            <h1 className="logo-text" style={{ margin: 0 }}>CampusConnect</h1>
           </div>
           <p className="subtitle">York University Study Group Platform</p>
         </header>

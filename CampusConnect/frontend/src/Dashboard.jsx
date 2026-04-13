@@ -91,7 +91,7 @@ function Dashboard({
 
   const getNextSession = async () => {
     try{
-      const res = await fetch(`http://localhost:2222/api/sessions/${currentUser}/next`);
+      const res = await fetch(`http://localhost:5000/api/sessions/${currentUser}/next`);
       const data = await res.json();
       if(data.success){
         setNextSession(data.data);
@@ -112,7 +112,7 @@ function Dashboard({
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <TopbarGlobe size={44} />
             <div>
-              <h1 className="logo-text" style={{ fontSize: 24, margin: 0 }}>StudySphere</h1>
+              <h1 className="logo-text" style={{ fontSize: 24, margin: 0 }}>CampusConnect</h1>
               <p className="subtitle" style={{ margin: "2px 0 0", fontSize: 12 }}>York University Study Group Platform</p>
             </div>
           </div>
@@ -136,7 +136,7 @@ function Dashboard({
           {/* CREATE AND NEXT STUDY SESSIOn */}
           <div className="dash-col-left">
             <div className="glass-card dash-panel">
-              <h2 className="dash-panel-title">Create New Sphere</h2>
+              <h2 className="dash-panel-title">Create New Study Group</h2>
               <div className="dash-form-stack">
                 <input className="glass-input" placeholder="Group Name" value={createTitle} onChange={(e) => setCreateTitle(e.target.value)} />
                 <input className="glass-input" placeholder="Course Code" value={createCourse} onChange={(e) => setCreateCourse(e.target.value)} />
@@ -177,7 +177,7 @@ function Dashboard({
           {/* SEARCH */}
           <div className="dash-col-center">
             <div className="glass-card dash-panel">
-              <h2 className="dash-panel-title">Explore Spheres</h2>
+              <h2 className="dash-panel-title">Explore Study Groups</h2>
               <div className="dash-search-row">
                 <input className="glass-input" style={{ flex: 1 }} placeholder="Search by course code…" value={localCourse} onChange={(e) => setLocalCourse(e.target.value)} />
                 <select className="glass-input dash-select" value={localDept} onChange={(e) => setLocalDept(e.target.value)}>

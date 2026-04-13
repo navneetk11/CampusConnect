@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const BACKEND_URL = 'http://localhost:2222';
+const BACKEND_URL = 'http://localhost:5000';
 
 export default function GroupChat({ groupId, token, username }) {
   const [messages, setMessages]   = useState([]);
@@ -237,7 +237,7 @@ export default function GroupChat({ groupId, token, username }) {
                 <div
                   style={{
                     ...styles.bubble,
-                    background: isMe ? "#c0392b" : "rgba(255,255,255,0.12)",
+                    background: isMe ? "#d23a8e" : "rgba(255,255,255,0.12)",
                     borderRadius: isMe
                       ? "18px 18px 4px 18px"
                       : "18px 18px 18px 4px",
@@ -347,7 +347,7 @@ export default function GroupChat({ groupId, token, username }) {
   );
 }
 
-//  Styles — matches StudySphere glassmorphism aesthetic 
+//  Styles — matches CampusConnect glassmorphism aesthetic 
 const styles = {
   wrapper: {
     background: 'rgba(255, 255, 255, 0.08)',
@@ -485,7 +485,7 @@ const styles = {
     fontFamily: 'inherit',
   },
   sendBtn: {
-    background: '#c0392b',
+    background: '#d23a8e',
     color: '#fff',
     border: 'none',
     borderRadius: '10px',

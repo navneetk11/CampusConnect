@@ -34,7 +34,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
  
   const fetchSessions = async () => {
     try {
-      const res = await fetch(`http://localhost:2222/api/sessions/${group._id}`);
+      const res = await fetch(`http://localhost:5000/api/sessions/${group._id}`);
       const data = await res.json();
       if (data.success) setSessions(data.data);
     } catch (error) {
@@ -44,7 +44,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
  
   const handleCreateSession = async () => {
     try {
-      const res = await fetch("http://localhost:2222/api/sessions/create", {
+      const res = await fetch("http://localhost:5000/api/sessions/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -73,7 +73,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
 
   const joinSession = async (sessionId) => {
     try {
-      const response = await fetch(`http://localhost:2222/api/sessions/${sessionId}/join`, {
+      const response = await fetch(`http://localhost:5000/api/sessions/${sessionId}/join`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: currentUser })
@@ -91,7 +91,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     try {
       const sId = sessionId?.toString() || sessionId;
       const uId = currentUser?.toString() || currentUser;
-      const response = await fetch(`http://localhost:2222/api/sessions/${sId}/leave`, {
+      const response = await fetch(`http://localhost:5000/api/sessions/${sId}/leave`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: uId })
@@ -109,7 +109,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     try {
       const gId = group._id?.toString() || group._id;
       const uId = currentUser?.toString() || currentUser;
-      const response = await fetch(`http://localhost:2222/api/groups/${gId}/leave`, {
+      const response = await fetch(`http://localhost:5000/api/groups/${gId}/leave`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: uId })
@@ -132,7 +132,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     const sId = sessionId?.toString() || sessionId;
     console.log("[cancelSession] sessionId:", sId);
 
-    const response = await fetch(`http://localhost:2222/api/sessions/${sId}`, {
+    const response = await fetch(`http://localhost:5000/api/sessions/${sId}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
     });
@@ -156,7 +156,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
     return;
   }
   try {
-    const response = await fetch(`http://localhost:2222/api/sessions/${rescheduleSessionId}/reschedule`, {
+    const response = await fetch(`http://localhost:5000/api/sessions/${rescheduleSessionId}/reschedule`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ newDate: rescheduleDate, newTime: rescheduleTime })
@@ -197,7 +197,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
             <TopbarGlobe size={44} />
             <div>
               <h1 className="logo-text" style={{ fontSize: 24, margin: 0 }}>
-                StudySphere
+                CampusConnect
               </h1>
               <p className="subtitle" style={{ margin: "2px 0 0", fontSize: 12 }}>
                 {group.title}
@@ -280,7 +280,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
                         width: "100%", padding: "0 16px", height: 34, fontSize: 12, fontWeight: 700,
                         borderRadius: 8, border: "1.5px solid #ff4060", cursor: "pointer",
                         fontFamily: "Poppins, sans-serif", color: "#ffffff",
-                        background: "rgba(200,16,46,0.75)",
+                        background: "#d23a8e",
                         boxShadow: "0 2px 12px rgba(200,16,46,0.4)",
                       }}
                       onClick={leaveGroup}
@@ -400,7 +400,7 @@ function GroupDetail({ group, currentUser, currentUsername, onBack, onJoin, addT
                             style={{
                               fontSize: 11, padding: "4px 12px", height: "auto",
                               border: "1.5px solid #ff4060", color: "#ffffff",
-                              background: "rgba(200,16,46,0.75)", fontWeight: 700,
+                              background: "#d23a8e", fontWeight: 700,
                               borderRadius: 6, cursor: "pointer", fontFamily: "Poppins, sans-serif",
                               boxShadow: "0 2px 8px rgba(200,16,46,0.35)",
                             }}

@@ -309,7 +309,7 @@ function Profile({ currentUser, onBack, addToast }) {
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <TopbarGlobe size={44} />
             <div>
-              <h1 className="logo-text" style={{ fontSize: 24, margin: 0 }}>StudySphere</h1>
+              <h1 className="logo-text" style={{ fontSize: 24, margin: 0 }}>CampusConnect</h1>
               <p className="subtitle" style={{ margin: "2px 0 0", fontSize: 12 }}>
                 York University Study Group Platform
               </p>

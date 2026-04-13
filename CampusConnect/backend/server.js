@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 
 
-const PORT = process.env.PORT || 2222;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); //allows parsing of json data 
 

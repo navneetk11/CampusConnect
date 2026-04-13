@@ -12,7 +12,7 @@ body {
  
 .login-page {
   height: 100vh;
-  background-image: url("/yorku.jpeg");
+  background-image: url("/University.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -93,7 +93,7 @@ body {
 }
  
 .glass-input:focus {
-  border-color: #C8102E;
+  border-color: #d23a8e;
   box-shadow: 0 0 8px rgba(200,16,46,0.4);
 }
  
@@ -107,7 +107,7 @@ body {
   font-weight: 600;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #C8102E, #a00d24);
+  background: linear-gradient(135deg, #d23a8e, #dc6174);
   color: white;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
@@ -132,10 +132,10 @@ body {
   font-weight: 600;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #C8102E, #a00d24);
+  background: linear-gradient(135deg, #d23a8e, #dc6174);
   color: white;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4),
+  box-shadow: 0 4px 15px rgba(200, 48, 73, 0.4),
               0 0 0px rgba(200, 16, 46, 0);
   transition: all 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -225,7 +225,7 @@ body {
  
 .dashboard-page {
   min-height: 100vh;
-  background-image: url("/yorku.jpeg");
+  background-image: url("/University.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -256,8 +256,8 @@ body {
  
 .dash-passport-pill {
   font-size: 12px;
-  background: rgba(200, 16, 46, 0.55);
-  border: 1px solid rgba(200, 16, 46, 0.9);
+  background: #d23a8e;
+  border: 1px solid rgba(209, 84, 144, 0.9);
   color: #ffffff;
   border-radius: 20px;
   padding: 6px 16px;
