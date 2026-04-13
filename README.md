@@ -88,18 +88,25 @@ npm install
 npm start
 ```
 
-Frontend typically runs on:
+## 🌐 Running the Application
 
-```
-http://localhost:5173
-```
+### 🔧 Local Development
 
-Backend typically runs on:
+Frontend runs on:
+http://localhost:5173  
 
-```
-http://localhost:5000
-```
+Backend runs on:
+http://localhost:5000  
 
+---
+
+### 🚀 Live Deployment
+
+Frontend (Vercel):
+https://campusconnect-737k.vercel.app  
+
+Backend (Render):
+https://campusconnect-8loz.onrender.com  
 
 ---
 
