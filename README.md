@@ -4,6 +4,9 @@ CampusConnect is a centralized student collaboration platform designed to help u
 
 ---
 
+
+🚀 **Live Demo:** [Click here to use CampusConnect](https://campusconnect-737k.vercel.app)
+
 ##  Motivation
 
 In large university environments, students often struggle to form meaningful academic connections. Traditional methods like group chats, social media posts, or messaging apps are unstructured and lack visibility.
