@@ -1,4 +1,4 @@
-📘 CampusConnect
+##📘 CampusConnect
 
 CampusConnect is a centralized student collaboration platform designed to help university students connect, organize, and participate in structured study groups. It provides a streamlined environment for discovering peers, scheduling sessions, and communicating effectively within academic communities.
 
