@@ -3,6 +3,31 @@
 CampusConnect is a centralized student collaboration platform designed to help university students connect, organize, and participate in structured study groups. It provides a streamlined environment for discovering peers, scheduling sessions, and communicating effectively within academic communities.
 
 ---
+## 🌐 Live Demo
+https://campus-connect-three-murex.vercel.app/
+
+## 📸 Screenshots
+
+### Landing Page
+![Landing](Screenshots/Landing%20Pagepng.png)
+
+### Home Dashboard
+![Home](Screenshots/Dashboard.png)
+
+### Login
+![Login](Screenshots/Login.png)
+
+### Find Your Study Group
+![Find Your Study Group](Screenshots/Find%20Your%20Study%20Group.png)
+
+### Schedule Study Session
+![Schedule Study Session](Screenshots/Create_Study%20sessions.png)
+
+### Group Chat
+![Group Chat](Screenshots/Group%20chat.png)
+
+---
+
 
 ##  Motivation
 
