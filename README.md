@@ -9,7 +9,7 @@ https://campus-connect-three-murex.vercel.app/
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing](Screenshots/Landing%20Pagepng.png)
+![Landing](Screenshots/LandingPage.png)
 
 ### Home Dashboard
 ![Home](Screenshots/Dashboard.png)
@@ -18,13 +18,13 @@ https://campus-connect-three-murex.vercel.app/
 ![Login](Screenshots/Login.png)
 
 ### Find Your Study Group
-![Find Your Study Group](Screenshots/Find%20Your%20Study%20Group.png)
+![Find Your Study Group](Screenshots/FindYourStudyGroup.png)
 
 ### Schedule Study Session
-![Schedule Study Session](Screenshots/Create_Study%20sessions.png)
+![Schedule Study Session](Screenshots/CreateStudySessions.png)
 
 ### Group Chat
-![Group Chat](Screenshots/Group%20chat.png)
+![Group Chat](Screenshots/GroupChat.png)
 
 ---
 
